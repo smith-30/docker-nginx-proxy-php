@@ -1,0 +1,31 @@
+version: '2'
+services:
+  mysql:
+    build: ./docker-configs/mysql
+    ports:
+      - "3306:3306"
+    environment:
+      MYSQL_ROOT_PASSWORD: admin
+    volumes:
+      - ./data/mysql:/var/lib/mysql
+      - ./data/init.d:/docker-entrypoint-initdb.d
+
+  nginx:
+    build: ./docker-configs/nginx
+    ports:
+      - "80:80"
+    links:
+      - php56
+    tty: true
+
+  php56:
+    build: ./docker-configs/php
+    volumes:
+      - ./php-apps:/var/www/html
+    depends_on:
+      - mysql
+    links:
+      - mysql
+    environment:
+      - VIRTUAL_HOST=blog.laravel.local
+      - VIRTUAL_HOST=cms.laravel.local
