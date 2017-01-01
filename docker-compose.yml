@@ -9,17 +9,8 @@ services:
     volumes:
       - ./data/mysql:/var/lib/mysql
       - ./data/init.d:/docker-entrypoint-initdb.d
-
-  nginx:
-    build: ./docker-configs/nginx
-    ports:
-      - "80:80"
-    links:
-      - php56
-    tty: true
-
-  php56:
-    build: ./docker-configs/php
+  php56-apache:
+    build: ./docker-configs/php56-apache
     volumes:
       - ./php-apps:/var/www/html
     depends_on:
@@ -29,3 +20,34 @@ services:
     environment:
       - VIRTUAL_HOST=blog.laravel.local
       - VIRTUAL_HOST=cms.laravel.local
+  nginx-proxy:
+    image: jwilder/nginx-proxy
+    volumes:
+      - /var/run/docker.sock:/tmp/docker.sock:ro
+      - /etc/localtime:/etc/localtime:ro
+    ports:
+      - '80:80'
+      - '443:443'
+  phpmyadmin:
+    image: phpmyadmin/phpmyadmin
+    environment:
+      - PMA_ARBITRARY=1
+      - PMA_HOST=mysql
+      - PMA_USER=root
+      - PMA_PASSWORD=admin
+      - VIRTUAL_HOST=phpmyadmin.local
+    ports:
+      - 8085:80
+    links:
+      - mysql
+  php7-apache:
+    build: ./docker-configs/php7-apache
+    volumes:
+      - ./php7-apache:/var/www/html
+      - ./docker-configs/php7-apache/000-default.conf:/etc/apache2/sites-available/000-default.conf
+    depends_on:
+      - mysql
+    links:
+      - mysql
+    environment:
+      - VIRTUAL_HOST=laravel5-1.local

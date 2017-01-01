@@ -1,2 +1,3 @@
 /data/init.d/*
 /data/mysql/*
+.idea/
