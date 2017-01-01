@@ -5,3 +5,5 @@ php7-apache/*
 !php7-apache/.gitkeep
 php56-apache/*
 !php56-apache/.gitkeep
+docker-configs/nginx-proxy/certs/*
+!docker-configs/nginx-proxy/certs/.gitkeep
