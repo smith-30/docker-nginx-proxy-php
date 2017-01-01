@@ -1,3 +1,7 @@
 /data/init.d/*
 /data/mysql/*
 .idea/
+php7-apache/
+!php7-apache/.gitkeep
+php56-apache/
+!php56-apache/.gitkeep
