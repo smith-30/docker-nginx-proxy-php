@@ -25,6 +25,7 @@ services:
     volumes:
       - /var/run/docker.sock:/tmp/docker.sock:ro
       - /etc/localtime:/etc/localtime:ro
+      - ./docker-configs/nginx-proxy/certs:/etc/nginx/certs
     ports:
       - '80:80'
       - '443:443'
