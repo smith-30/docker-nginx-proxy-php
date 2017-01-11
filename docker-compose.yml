@@ -12,14 +12,13 @@ services:
   php56-apache:
     build: ./docker-configs/php56-apache
     volumes:
-      - ./php-apps:/var/www/html
+      - ./php56-apps:/var/www/html
     depends_on:
       - mysql
     links:
       - mysql
     environment:
       - VIRTUAL_HOST=blog.laravel.local
-      - VIRTUAL_HOST=cms.laravel.local
   nginx-proxy:
     image: jwilder/nginx-proxy
     volumes:
@@ -52,4 +51,3 @@ services:
       - mysql
     environment:
       - VIRTUAL_HOST=laravel5-1.local
-      - VIRTUAL_HOST=matching-fc.local
