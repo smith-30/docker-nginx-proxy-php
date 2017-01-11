@@ -13,6 +13,7 @@ services:
     build: ./docker-configs/php56-apache
     volumes:
       - ./php56-apps:/var/www/html
+      - ./docker-configs/php56-apache/000-default.conf:/etc/apache2/sites-available/000-default.conf
     depends_on:
       - mysql
     links:
