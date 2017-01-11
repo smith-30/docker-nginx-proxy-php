@@ -1,4 +1,4 @@
-FROM php:7.1.0-apache
+FROM php:5.6.27-apache
 MAINTAINER misu
 
 RUN apt-get update
