@@ -1,3 +1,6 @@
+## 設定手順
+https://github.com/KoheiMisu/docker-nginx-proxy-php/wiki/%E8%A8%AD%E5%AE%9A%E6%89%8B%E9%A0%86
+
 ## nginx-proxy
 environmentのVIRTUAL_HOSTを持つコンテナを参照してくれる
 
@@ -17,7 +20,15 @@ localhost:8085で接続
 
 ## php5.6
 
+- composer
+- node v5.12.0
+- git
+
 ## php7.1
+
+- composer
+- node v5.12.0
+- git
 
 apacheのドキュメントルートの設定はdocker-compose.yml参照
 
