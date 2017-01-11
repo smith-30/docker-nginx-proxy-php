@@ -1,3 +1,6 @@
+## 設定手順
+https://github.com/KoheiMisu/docker-nginx-proxy-php/wiki/%E8%A8%AD%E5%AE%9A%E6%89%8B%E9%A0%86
+
 ## nginx-proxy
 environmentのVIRTUAL_HOSTを持つコンテナを参照してくれる
 
