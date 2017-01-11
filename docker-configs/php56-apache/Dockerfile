@@ -9,6 +9,8 @@ RUN docker-php-ext-install pdo_mysql mbstring
 
 ### composer
 RUN curl -sS https://getcomposer.org/installer | php -- --install-dir=/usr/local/bin --filename=composer
+#composer高速化ライブラリ
+RUN composer global require "hirak/prestissimo:^0.3"
 
 ### Node
 # gpg keys listed at https://github.com/nodejs/node
