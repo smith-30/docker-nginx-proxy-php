@@ -17,7 +17,15 @@ localhost:8085で接続
 
 ## php5.6
 
+- composer
+- node v5.12.0
+- git
+
 ## php7.1
+
+- composer
+- node v5.12.0
+- git
 
 apacheのドキュメントルートの設定はdocker-compose.yml参照
 
