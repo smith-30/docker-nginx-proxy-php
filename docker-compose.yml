@@ -29,6 +29,17 @@ services:
     ports:
       - '80:80'
       - '443:443'
+  mysql5-1:
+    build: ./docker-configs/mysql5-1
+    environment:
+      MYSQL_ROOT_PASSWORD: admin
+      MYSQL_DATABASE:
+    volumes:
+      - ./docker-configs/mysql5-1/dbData:/var/lib/mysql
+      - ./docker-configs/mysql5-1/initData:/initData
+      - /etc/localtime:/etc/localtime:ro
+    ports:
+      - "47750:3306"
   phpmyadmin:
     image: phpmyadmin/phpmyadmin
     environment:

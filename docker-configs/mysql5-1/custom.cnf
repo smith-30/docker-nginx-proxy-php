@@ -1,0 +1,12 @@
+[mysqld]
+character-set-server=utf8
+default-character-set = utf8
+skip-character-set-client-handshake
+collation-server = utf8_general_ci
+init-connect = SET NAMES utf8
+
+sql_mode=''
+max_allowed_packet=16M
+
+[client]
+default-character-set=utf8

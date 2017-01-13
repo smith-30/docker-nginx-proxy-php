@@ -7,3 +7,7 @@ php56-apache/*
 !php56-apache/.gitkeep
 docker-configs/nginx-proxy/certs/*
 !docker-configs/nginx-proxy/certs/.gitkeep
+docker-configs/mysql5-1/dbData/*
+docker-configs/mysql5-1/initData/*
+!docker-configs/mysql5-1/dbData/.gitkeep
+!docker-configs/mysql5-1/initData/.gitkeep
