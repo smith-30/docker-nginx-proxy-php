@@ -1,11 +1,11 @@
 FROM php:5.6.27-apache
 MAINTAINER misu
 
-RUN apt-get update
-RUN apt-get install -y git zip
-
-RUN apt-get update
-RUN docker-php-ext-install pdo_mysql mbstring
+RUN apt-get update -y && apt-get install -y libpng-dev libjpeg-dev zip unzip git
+RUN docker-php-ext-configure gd \
+		--with-jpeg-dir=/usr/lib/x86_64-linux-gnu/ \
+	&& \
+    docker-php-ext-install pdo pdo_mysql gd mbstring
 
 ### composer
 RUN curl -sS https://getcomposer.org/installer | php -- --install-dir=/usr/local/bin --filename=composer
