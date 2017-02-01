@@ -14,6 +14,9 @@ http://qiita.com/sigelinde/items/95c154dc807a4bbc9cf0
 
 ## mysql
 
+5.7  
+別ブランチに5.1もある
+
 ## phpmyadmin
 
 localhost:8085で接続
