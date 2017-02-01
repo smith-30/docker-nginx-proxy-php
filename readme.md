@@ -14,19 +14,26 @@ http://qiita.com/sigelinde/items/95c154dc807a4bbc9cf0
 
 ## mysql
 
+5.7  
+別ブランチに5.1もある
+
 ## phpmyadmin
 
 localhost:8085で接続
 
 ## php5.6
 
-- composer
+- composer  
+pretissimo入っているので10倍速でinstallされます
+
 - node v5.12.0
 - git
 
 ## php7.1
 
-- composer
+- composer  
+pretissimo入っているので10倍速でinstallされます
+
 - node v5.12.0
 - git
 
