@@ -38,5 +38,13 @@ RUN curl -SLO "https://nodejs.org/dist/v$NODE_VERSION/node-v$NODE_VERSION-linux-
   && tar -xJf "node-v$NODE_VERSION-linux-x64.tar.xz" -C /usr/local --strip-components=1 \
   && rm "node-v$NODE_VERSION-linux-x64.tar.xz" SHASUMS256.txt.asc SHASUMS256.txt
 
+# apacheの書き込み権限を修正する
+RUN usermod -u 1000 www-data \
+  && groupmod -g 1000 www-data
+
 RUN a2enmod rewrite
-RUN a2enmod ssl
+
+### cron
+#RUN apt-get update -y && apt-get install -y cron
+#RUN echo '* * * * * root php /var/www/html/missparis/artisan schedule:run >> /dev/null 2>&1' >> /etc/crontab
+#CMD ["cron", "-f"]
